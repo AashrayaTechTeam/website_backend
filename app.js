@@ -12,6 +12,7 @@ require("./__DATABASE/SERVER/initialiseDB");
 // link the router files 
 app.use(require('./__ROUTES/FUNDRAISE/Fund_raise'))
 app.use(require('./__ROUTES/AUTHENTICATION/SIGN_IN/Sign_in'))
+app.use(requ)
 // app.use(require('./__ROUTER/Auth'))
 // app.use(require('./__ROUTER/Services'))
 // app.use(require('./__ROUTER/Address'))
