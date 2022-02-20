@@ -42,6 +42,11 @@ let STATE_REPRESENTATIVE_SCHEMA = new Schema(
       type: Number,
       required: true,
     },
+    core_team: {
+      type: String,
+      required: true,
+      lowercase: true,
+    },
   },
   {
     collection: "STATE_REPRESENTATIVES",
