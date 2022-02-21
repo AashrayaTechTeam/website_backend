@@ -17,6 +17,7 @@ app.use(require('./__ROUTES/ANNOUNCEMENTS/Announcement'))
 app.use(require('./__ROUTES/BLOG_POST/POST_LISTING/List_post'))
 app.use(require('./__ROUTES/TEAM_LISTING/STATE_REPRESENTATIVE/List_state_representative'))
 app.use(require('./__ROUTES/TEAM_LISTING/VOLUNTEERS/List_volunteers'))
+app.use(require('./__ROUTES/AUTHENTICATION/GET_USER/Get_user'))
 
 
 // if(process.env.NODE_ENV == "production"){
