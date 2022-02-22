@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
-
+const bcrypt = require('bcryptjs');
+const User = require('../../../MODELS/User');
+const jwt = require('jsonwebtoken');
 
 router.post('/signin' , async(req , res)=>{
     
@@ -19,10 +20,10 @@ router.post('/signin' , async(req , res)=>{
 
         if(isMatch)
                {
-                const token = jwt.sign({_id :userLogin._id} , process.env.JWT_SECRET_KEY , {
+                const token = jwt.sign({_id :userLogin._id} , 'secret' , {
                     expiresIn:"30d"
                 });
-                res.cookie("token" ,token ,{ secure: true });
+               // res.cookie("token" ,token ,{ secure: true });
                 res.status(200).json({token})
                 console.log(token)
                }  
