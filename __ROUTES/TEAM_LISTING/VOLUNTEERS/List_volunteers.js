@@ -16,4 +16,18 @@ router.get("/volunteers/:tag", async (req, res) => {
   });
 });
 
+router.get("/core_team/:team", async (req, res) => {
+  STATE_REPRESENTATIVE.find({ core_team: req.params.team }, function (error, response) {
+    if (error) {
+      console.log(error);
+      res.status(400).send({
+        status: "error",
+        message: "Error while fetching data to db",
+      });
+    } else {
+      res.send(response);
+    }
+  });
+});
+
 module.exports = router;
