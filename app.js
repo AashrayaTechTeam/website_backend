@@ -10,13 +10,12 @@ require("./__DATABASE/SERVER/initialiseDB");
 
 
 // link the router files 
-app.use(require('./__ROUTES/FUNDRAISE/Fund_raise'))
-app.use(require('./__ROUTES/AUTHENTICATION/SIGN_IN/Sign_in'))
-app.use(require('./__ROUTES/AUTHENTICATION/SIGN_UP/Sign_up'))
-app.use(require('./__ROUTES/ANNOUNCEMENTS/Announcement'))
-app.use(require('./__ROUTES/BLOG_POST/POST_LISTING/List_post'))
-app.use(require('./__ROUTES/TEAM_LISTING/STATE_REPRESENTATIVE/List_state_representative'))
-app.use(require('./__ROUTES/TEAM_LISTING/VOLUNTEERS/List_volunteers'))
+app.use(require('./__ROUTES/TEAM_LISTING/Team'))
+app.use(require('./__ROUTES/AUTHENTICATION/Auth'))
+
+// app.use(require('./__ROUTES/TEAM_LISTING/STATE_REPRESENTATIVE/List_state_representative'))
+// app.use(require('./__ROUTES/TEAM_LISTING/VOLUNTEERS/List_volunteers'))
+
 
 
 // if(process.env.NODE_ENV == "production"){
