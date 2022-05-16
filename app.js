@@ -12,7 +12,8 @@ require("./__DATABASE/SERVER/initialiseDB");
 // link the router files 
 app.use(require('./__ROUTES/TEAM_LISTING/Team'))
 app.use(require('./__ROUTES/AUTHENTICATION/Auth'))
-
+app.use(require('./__ROUTES/ADMIN_ROUTES/AdminRoutes'))
+app.use(require('./__ROUTES/CONTACT_US/ContactUs'))
 // app.use(require('./__ROUTES/TEAM_LISTING/STATE_REPRESENTATIVE/List_state_representative'))
 // app.use(require('./__ROUTES/TEAM_LISTING/VOLUNTEERS/List_volunteers'))
 

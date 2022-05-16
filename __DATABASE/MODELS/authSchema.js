@@ -7,12 +7,13 @@ const authSchema =  new mongoose.Schema({
         type: String,
         required:true
     },
+    Name:{
+        type:String,
+        required:true
+    },
     Aashraya_Id:{
         type: String,
         required:true,
-        trim: true,
-        minLength: [2, "Name is too short!"],
-        maxLength: 20,
     },
     profilePic:{
         type:String,
@@ -20,7 +21,7 @@ const authSchema =  new mongoose.Schema({
     },
     mobileNumber:{
         type: Number,
-        required: [true, "What is your contact number?"],
+        required: true
     },
     email:{
         type:String,
@@ -29,14 +30,10 @@ const authSchema =  new mongoose.Schema({
     password:{
         type:String,
         required:true,
-        minLength: [2, "password is not strong"],
-        maxLength: 20
     },
     confirmPass:{
         type:String,
         required:true,
-        minLength: [2, "password is not strong"],
-        maxLength: 20
      }
 } ,
 {timestamps:true}
@@ -46,7 +43,7 @@ const authSchema =  new mongoose.Schema({
 
 // hash the password 
 
-userSchema.pre('save' , async function (next) {
+authSchema.pre('save' , async function (next) {
 
     
     if(this.isModified('password'))
